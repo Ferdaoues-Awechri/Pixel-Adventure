@@ -96,6 +96,13 @@ public Animator animator;
     {
         Vector2 localScale = transform.localScale;
         collider2d.Raycast(Mathf.Sign(localScale.x) * Vector2.right, groundCheckFilter, wallHits, wallRaycastDistance);
-        return wallHits.Count > 0;
+     
+        if (wallHits.Count > 0)
+        {
+            return true;
+        } else
+        {
+            return false;
+        }
     }
 }
